@@ -105,6 +105,18 @@ function agregarAsistente(texto, toolCalls = [], necesitaConfirmacion = false) {
     contenedor.append(tarjetaHerramienta(llamada));
   }
 
+  const rutasTurno = new Set();
+  for (const llamada of toolCalls) {
+    try {
+      recolectarRutas(JSON.parse(llamada.resultado), rutasTurno);
+    } catch {
+      recolectarRutas(llamada.resultado, rutasTurno);
+    }
+  }
+  if (rutasTurno.size > 0) {
+    contenedor.append(cajaEntregables(rutasTurno));
+  }
+
   if (necesitaConfirmacion) {
     contenedor.append(cajaConfirmacion());
   }
@@ -182,6 +194,7 @@ async function descargar(ruta) {
 function tarjetaHerramienta(llamada) {
   const detalles = document.createElement("details");
   detalles.className = `tool ${llamada.ok ? "ok" : "fallo"}`;
+  if (llamada.name === "proveedor_simular_envio") detalles.open = true;
 
   const summary = document.createElement("summary");
 
@@ -241,6 +254,28 @@ function tarjetaHerramienta(llamada) {
 
   detalles.append(summary, cuerpo);
   return detalles;
+}
+
+function cajaEntregables(rutas) {
+  const caja = document.createElement("div");
+  caja.className = "entregables";
+
+  const titulo = document.createElement("div");
+  titulo.className = "etiqueta-entregables";
+  titulo.textContent = "Archivos generados en este turno";
+
+  const descargas = document.createElement("div");
+  descargas.className = "descargas";
+  for (const ruta of rutas) {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.textContent = `Descargar ${nombreArchivo(ruta)}`;
+    boton.addEventListener("click", () => descargar(ruta));
+    descargas.append(boton);
+  }
+
+  caja.append(titulo, descargas);
+  return caja;
 }
 
 function cajaConfirmacion() {

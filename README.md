@@ -152,6 +152,10 @@ out/<caso>/
     └── estado.json
 ```
 
+En el front no hay explorador de archivos: cada herramienta muestra un botón de descarga y el bloque
+«Archivos generados en este turno» reúne los del turno, incluido `ENVIO-SIMULADO.md`. En Render el
+disco es efímero: si el servicio se reinicia, los archivos anteriores desaparecen.
+
 ## Despliegue (Render, plan gratuito)
 
 El repositorio incluye `Dockerfile`. En Render:

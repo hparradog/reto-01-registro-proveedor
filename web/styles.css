@@ -398,6 +398,21 @@ button {
   background: var(--acento-suave);
 }
 
+.entregables {
+  border: 1px solid #bfe0da;
+  background: #f0faf8;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: grid;
+  gap: 7px;
+}
+
+.entregables .etiqueta-entregables {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0b5d5d;
+}
+
 .confirmacion {
   border: 1px solid #e8c98a;
   background: var(--alerta-fondo);
