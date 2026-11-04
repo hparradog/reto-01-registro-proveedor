@@ -1,0 +1,12 @@
+{
+  "name": "periferia-registro-proveedor-modulo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Módulo reutilizable del agente de registro como proveedor (sin servidor HTTP).",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "pdfkit": "^0.17.2",
+    "zod": "^3.25.76"
+  }
+}
