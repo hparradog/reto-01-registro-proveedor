@@ -1,0 +1,28 @@
+{
+  "name": "reto-01-registro-proveedor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Agente conversacional para el registro de Periferia como proveedor",
+  "scripts": {
+    "dev": "bun run src/server.ts",
+    "start": "bun run src/server.ts",
+    "demo": "bun run demo.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "build:modulo": "bun run scripts/build-modulo.ts build",
+    "check:modulo": "bun run scripts/build-modulo.ts check"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "exceljs": "^4.4.0",
+    "pdfkit": "^0.17.2",
+    "zod": "^3.25.76",
+    "zod-to-json-schema": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.23",
+    "@types/pdfkit": "^0.17.3",
+    "typescript": "^5.9.3"
+  }
+}
