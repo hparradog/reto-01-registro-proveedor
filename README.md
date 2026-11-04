@@ -169,8 +169,8 @@ alrededor de un minuto en despertar; el disco es efímero, así que `out/` y las
 al reiniciar. Para la defensa, abre la URL unos minutos antes. También sirve `docker compose up` o
 un túnel estable como respaldo.
 
-- **Link de prueba**: `<<URL_DEL_DESPLIEGUE>>`
-- **Clave de acceso**: `<<ACCESS_KEY_SI_APLICA>>`
+- **Link de prueba**: <https://reto-01-registro-proveedor-8tmm.onrender.com/>
+- **Clave de acceso**: `1231` (campo con el candado, arriba a la derecha)
 
 ## Seguridad y límites
 
